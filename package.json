@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/IcaliaLabs/sepomex-form-plugin/issues"
   },
-  "homepage": "https://github.com/IcaliaLabs/sepomex-form-plugin#readme"
+  "homepage": "https://github.com/IcaliaLabs/sepomex-form-plugin#readme",
+  "dependencies": {
+    "javascript-models": "^1.0.2"
+  }
 }
