@@ -1,9 +1,11 @@
 (function( $ ) {
   $.fn.sepomexForm = function(options) {
+    const MEXICO_COORDINATES = {lat: 25.697094, lng: -100.352872};
+
     var opts = $.extend( {}, $.fn.sepomexForm.defaults, options );
 
     map = new google.maps.Map(document.getElementById($.fn.sepomexForm.defaults.mapContainer.substr(1)), {
-      center: {lat: 25.697094, lng: -100.352872},
+      center: MEXICO_COORDINATES,
       zoom: 8
     });
 
