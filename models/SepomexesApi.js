@@ -26,7 +26,9 @@ class SepomexesApi {
 
   // Wired up to `Model.all(params)`
   static getAll(params) {
-
+    return new Promise((resolve, reject) => {
+      resolve(100);
+    });
   }
 
   // Wired up to `Model.first(params)`

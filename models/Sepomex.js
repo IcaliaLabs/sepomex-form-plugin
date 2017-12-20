@@ -1,5 +1,5 @@
 const {JsModel} = require('javascript-models');
-const { SepomexApi } = require('./SepomexApi');
+const { SepomexesApi } = require('./SepomexesApi');
 
 class Sepomex extends JsModel {
   static ATTRIBUTES() {
@@ -9,7 +9,7 @@ class Sepomex extends JsModel {
   }
 
   static API_CLASS() {
-    return SepomexApi
+    return SepomexesApi
   }
 }
 
