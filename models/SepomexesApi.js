@@ -1,7 +1,10 @@
+const { performGetRequest } = require('../form-plugin/application_helper.js');
+const { Sepomex } = require('../models/Sepomex.js');
+
 class SepomexesApi {
   // Wired up to `Model.create(params)` and `model.save()`
   static postCreate(params) {
-    return Promise.resolve({})
+
   }
 
   // Wired up to `model.update()`
@@ -18,17 +21,15 @@ class SepomexesApi {
   static deleteDestroy(params) {
 
   }
-
+  
   // Wired up to `Model.find(params)`
   static getFind(params) {
-
+    
   }
 
   // Wired up to `Model.all(params)`
   static getAll(params) {
-    return new Promise((resolve, reject) => {
-      resolve(100);
-    });
+  
   }
 
   // Wired up to `Model.first(params)`
@@ -43,7 +44,16 @@ class SepomexesApi {
 
   // Wired up to `Model.where(params)`
   static getWhere(params) {
+    return new Promise((resolve, reject) => {
+      
+      var data = performGetRequest(params);
+      resolve(data);
 
+    }).then((response) => {
+        console.log(response);
+      }).catch((error) => {
+        console.log(error);
+    });
   }
 }
 
