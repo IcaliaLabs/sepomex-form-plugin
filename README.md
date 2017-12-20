@@ -19,7 +19,7 @@ fields based on a Google Maps arker, and by placing markers based on form inform
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	```
 
-2. Include Google Maps Api:
+2. Include Google Maps Api. You will need an API key, if you don't have one you can get it [here](https://developers.google.com/maps/documentation/javascript/get-api-key):
 
 	```html
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
