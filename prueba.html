@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba</title>
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="./models/Sepomex.js"></script>
+	<script src="./form-plugin/FormHandler.js"></script>
+	<script src="./form-plugin/GoogleMapsHandler.js"></script>
+
+</head>
+<body>
+
+
+	<form id="form">
+	  ZipCode<br>
+	  <input type="text" name="AddressZipCode" id="AddressZipCode">
+	  <br>
+	  Estado<br>
+	  <input type="text" name="AddressState" id="AddressState">
+	  <br>
+	  Colonia<br>
+	  <input type="text" name="AddressSuburb" id="AddressSuburb">
+	  <br>
+	  City<br>
+	  <input type="text" name="AddressCity" id="AddressCity">
+	  <br><br>
+	  <input type="submit" value="Submit">
+	</form> 
+
+
+	<script type="text/javascript"> 
+
+		$("#form").autocompleteForm({zipCodeContainer: 64000, SuburbContainer: "Centro", cityContainer: "Monterrey", stateContainer: "Nuevo Leon"});
+
+	</script>
+</body>
+</html>
