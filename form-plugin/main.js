@@ -4,20 +4,8 @@ const { SepomexesApi } = require('../models/SepomexesApi');
 const { performGetRequest } = require('../form-plugin/application_helper.js');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-
-
 (function( $ ) {
   $.fn.autocompleteForm = function(options) {
-    var opts = $.extend( {}, $.fn.autocompleteForm.defaults, options );
-    $("#AddressZipCode").focusout(function(){
-      debugger
-      /*Sepomex.where({zip_code: 64000}).then((response) => {
-          $("#AddressCity").val("ANAPAO")
-        }).catch((error) => {
-          console.log("ERROR")
-          console.log(error);
-      });*/
-    });
 
     $.fn.autocompleteForm.defaults = {
       suburbContainer: "#AddressSuburb",
@@ -26,8 +14,46 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
       zipCodeContainer: "#AddressZipCode"
     };
 
-  }
+    var opts = $.extend( {}, $.fn.autocompleteForm.defaults, options );
 
+    function completeCity(response){
+      $($.fn.autocompleteForm.defaults.cityContainer).val(response[0].d_mnpio);
+    }
+    function completeState(response){
+      $($.fn.autocompleteForm.defaults.stateContainer).val(response[0].d_estado);
+    }
+    function completeZipCode(response){
+      $($.fn.autocompleteForm.defaults.zipCodeContainer).val(response[0].d_codigo);
+    }
+
+
+    $($.fn.autocompleteForm.defaults.zipCodeContainer).focusout(function(){
+      Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value}).then((response) => {
+          completeCity(response);
+          completeState(response);
+        }).catch((error) => {
+          console.log("ERROR")
+      });
+    });
+
+    $($.fn.autocompleteForm.defaults.suburbContainer).focusout(function(){
+      Sepomex.where({colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value}).then((response) => {
+          completeZipCode(response)
+          completeCity(response);
+          completeState(response);
+        }).catch((error) => {
+          console.log("ERROR")
+      });
+    });
+
+    $($.fn.autocompleteForm.defaults.cityContainer).focusout(function(){
+      Sepomex.where({city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
+          completeState(response);
+        }).catch((error) => {
+          console.log("ERROR")
+      });
+    });
+  }
 
 }( jQuery ));
 

@@ -20,9 +20,7 @@
   },
   "homepage": "https://github.com/IcaliaLabs/sepomex-form-plugin#readme",
   "dependencies": {
-    "axios": "^0.17.1",
     "javascript-models": "^1.0.2",
-    "ramda": "^0.25.0",
     "xmlhttprequest": "^1.8.0"
   }
 }

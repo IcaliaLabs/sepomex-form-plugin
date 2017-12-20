@@ -45,8 +45,7 @@ class SepomexesApi {
   // Wired up to `Model.where(params)`
   static getWhere(params) {
     return new Promise((resolve, reject) => {
-      var data = performGetRequest(params);
-      resolve(data);
+      performGetRequest(params, resolve);
     })
   }
 }
