@@ -1,4 +1,4 @@
-const {JsModel} = require('javascript-models');
+const { JsModel } = require('javascript-models');
 const { SepomexesApi } = require('./SepomexesApi');
 
 class Sepomex extends JsModel {

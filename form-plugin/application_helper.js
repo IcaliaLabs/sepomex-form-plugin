@@ -24,30 +24,31 @@ const createSepomex = (attributes) => {
   return model;
 }
 
+const performGetRequest = (params, callback) => {
 
-function httpGet(theUrl)
-{
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-  xmlHttp.send( null );
-  return JSON.parse(xmlHttp.responseText)
-}
-
-const performGetRequest = (params) => {
-
-  var BASE_URL = "http://sepomex.icalialabs.com/api/v1/zip_codes?zip_code=" + params.zip_code;
+  var BASE_URL = "http://sepomex.icalialabs.com/api/v1/zip_codes";
 
   var response = new Array;
-  var data = httpGet(BASE_URL);
-  var code_attributes, zip_codes, _i;
-  
-  zip_codes = data.zip_codes;
-  for (_i = 0; _i < zip_codes.length; _i++) {
-    code_attributes = zip_codes[_i];
-    response.push(createSepomex(code_attributes));
-  }
-  return response;
+  $.ajax({
+    url: BASE_URL,
+    dataType: 'json',
+    type: 'GET',
+    data: params,
+    success: function(data) {
+      var code_attributes, zip_codes, _i;
+      zip_codes = data.zip_codes;
+      for (_i = 0; _i < zip_codes.length; _i++) {
+        code_attributes = zip_codes[_i];
+        response.push(createSepomex(code_attributes));
+      }
+      callback(response);
+    },
+    error: function(error) {
+      console.log(error)
+    }
+  });  
 }
 
-
 exports.performGetRequest = performGetRequest
+
+
