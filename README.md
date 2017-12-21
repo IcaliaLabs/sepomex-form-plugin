@@ -1,5 +1,5 @@
 <img src="https://gist.githubusercontent.com/ReneSG/edd816da93cc78288962a6846587c644/raw/9ffb21419aa19eb8414c56982ff8c59eeddab60b/Sepomexlogo.jpg" width="700">
-![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)
+[![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)]
 
 
 _SepomexForm with Google Maps integration facilitates the use of forms with addresses in your application._
@@ -12,6 +12,8 @@ SepomexForm brings you easy implementation of form filling using Google Maps Api
 fields based on a Google Maps arker, and by placing markers based on form information.
 
 SepomexForm has a second functionality, by using the Sepomex API, it allows fields of your form to be automatically filled when typing more specific information. See below for examples and a more thorough explanation.
+
+SepomexForm has even a third functionality! It migrates all data from [Sepomex Api](https://github.com/IcaliaLabs/sepomex) to [JSModels](https://github.com/IcaliaLabs/javascript-models)
 
 ## Installation of Google Map Sepomex Form: 
 
@@ -78,6 +80,8 @@ SepomexForm has a second functionality, by using the Sepomex API, it allows fiel
 * [Configuring AutocompleteForm](#configuring-autocompleteform)
   - [Default config](#default-config-autocomplete)
   - [Generator](#custom-config-autocomplete)
+* [Using JS Models]
+  - [Usage](#JsModels-usage)
 * [Contributing](#contributing)
 * [Heroes](#heroes)
 
@@ -164,6 +168,12 @@ before calling the plugin.
   // Plugin call
   $.fn.autocompleteForm();
 ```
+
+## JSModels
+ 
+ SepomexForm migrates the data from [SepomexApi] to JsModels. Please refer to its documentation for more about it. [here](https://github.com/IcaliaLabs/javascript-models)
+
+ 
 
 
 
