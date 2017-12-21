@@ -2,7 +2,7 @@ const { JsModel } = require('javascript-models');
 const { Sepomex } = require('../models/Sepomex.js');
 const { SepomexesApi } = require('../models/SepomexesApi');
 const { performGetRequest } = require('../form-plugin/application_helper.js');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var axios = require('axios')
 
 (function( $ ) {
   $.fn.autocompleteForm = function(options) {
@@ -32,7 +32,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
           completeCity(response);
           completeState(response);
         }).catch((error) => {
-          console.log("ERROR")
+          console.log("Error in autcomplete zipcode")
       });
     });
 
@@ -42,7 +42,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
           completeCity(response);
           completeState(response);
         }).catch((error) => {
-          console.log("ERROR")
+          console.log("Error in autcomplete suburb")
       });
     });
 
@@ -50,7 +50,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
       Sepomex.where({city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeState(response);
         }).catch((error) => {
-          console.log("ERROR")
+          console.log("Error in autcomplete city")
       });
     });
   }
