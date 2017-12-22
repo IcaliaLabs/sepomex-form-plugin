@@ -21,6 +21,7 @@
   "homepage": "https://github.com/IcaliaLabs/sepomex-form-plugin#readme",
   "dependencies": {
     "axios": "^0.17.1",
-    "javascript-models": "^1.0.2"
+    "javascript-models": "^1.0.2",
+    "jquery": "^3.2.1"
   }
 }
