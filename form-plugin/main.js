@@ -27,7 +27,7 @@ var axios = require('axios')
     }
 
     $($.fn.autocompleteForm.defaults.zipCodeContainer).focusout(function(){
-      Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value}).then((response) => {
+      Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value, colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value, city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeCity(response);
           completeState(response);
         }).catch((error) => {
@@ -36,7 +36,7 @@ var axios = require('axios')
     });
 
     $($.fn.autocompleteForm.defaults.suburbContainer).focusout(function(){
-      Sepomex.where({colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value}).then((response) => {
+      Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value, colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value, city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeZipCode(response)
           completeCity(response);
           completeState(response);
@@ -46,7 +46,7 @@ var axios = require('axios')
     });
 
     $($.fn.autocompleteForm.defaults.cityContainer).focusout(function(){
-      Sepomex.where({city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
+      Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value, colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value, city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeState(response);
         }).catch((error) => {
           console.log("Error in autocompleting city")
