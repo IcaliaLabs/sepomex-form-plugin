@@ -26,7 +26,6 @@ var axios = require('axios')
       $($.fn.autocompleteForm.defaults.zipCodeContainer).val(response[0].d_codigo);
     }
 
-
     $($.fn.autocompleteForm.defaults.zipCodeContainer).focusout(function(){
       Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value}).then((response) => {
           completeCity(response);
