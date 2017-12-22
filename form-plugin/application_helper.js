@@ -40,7 +40,6 @@ const performGetRequest = (params, callback) => {
         callback(container);
       })
       .catch(function (error) {
-        console.log("NO SE PUDO")
         console.log(error);
       });
 

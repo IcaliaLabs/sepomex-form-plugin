@@ -32,7 +32,7 @@ var axios = require('axios')
           completeCity(response);
           completeState(response);
         }).catch((error) => {
-          console.log("Error in autcomplete zipcode")
+          console.log("Error in autocompleting zipcode")
       });
     });
 
@@ -42,7 +42,7 @@ var axios = require('axios')
           completeCity(response);
           completeState(response);
         }).catch((error) => {
-          console.log("Error in autcomplete suburb")
+          console.log("Error in autocompleting suburb")
       });
     });
 
@@ -50,7 +50,7 @@ var axios = require('axios')
       Sepomex.where({city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeState(response);
         }).catch((error) => {
-          console.log("Error in autcomplete city")
+          console.log("Error in autocompleting city")
       });
     });
   }
