@@ -1,4 +1,4 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var axios = require('axios')
 
 const createSepomex = (attributes) => {
   const { Sepomex } = require('../models/Sepomex.js');
@@ -25,30 +25,21 @@ const createSepomex = (attributes) => {
 }
 
 const performGetRequest = (params, callback) => {
-
   var BASE_URL = "http://sepomex.icalialabs.com/api/v1/zip_codes";
-
-  var response = new Array;
-  $.ajax({
-    url: BASE_URL,
-    dataType: 'json',
-    type: 'GET',
-    data: params,
-    success: function(data) {
+  var container = new Array;
+  axios.get(BASE_URL, {params: params})
+    .then(function (response) {
       var code_attributes, zip_codes, _i;
-      zip_codes = data.zip_codes;
+      zip_codes = response.data.zip_codes;
       for (_i = 0; _i < zip_codes.length; _i++) {
         code_attributes = zip_codes[_i];
-        response.push(createSepomex(code_attributes));
+        container.push(createSepomex(code_attributes));
       }
-      callback(response);
-    },
-    error: function(error) {
-      console.log(error)
-    }
-  });  
+      callback(container);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 exports.performGetRequest = performGetRequest
-
-

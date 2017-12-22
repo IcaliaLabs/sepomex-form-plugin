@@ -2,7 +2,7 @@ const { JsModel } = require('javascript-models');
 const { Sepomex } = require('../models/Sepomex.js');
 const { SepomexesApi } = require('../models/SepomexesApi');
 const { performGetRequest } = require('../form-plugin/application_helper.js');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var axios = require('axios')
 
 (function( $ ) {
   $.fn.autocompleteForm = function(options) {
@@ -26,13 +26,12 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
       $($.fn.autocompleteForm.defaults.zipCodeContainer).val(response[0].d_codigo);
     }
 
-
     $($.fn.autocompleteForm.defaults.zipCodeContainer).focusout(function(){
       Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value}).then((response) => {
           completeCity(response);
           completeState(response);
         }).catch((error) => {
-          console.log("ERROR")
+          console.log("Error in autocompleting zipcode")
       });
     });
 
@@ -42,7 +41,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
           completeCity(response);
           completeState(response);
         }).catch((error) => {
-          console.log("ERROR")
+          console.log("Error in autocompleting suburb")
       });
     });
 
@@ -50,7 +49,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
       Sepomex.where({city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeState(response);
         }).catch((error) => {
-          console.log("ERROR")
+          console.log("Error in autocompleting city")
       });
     });
   }
