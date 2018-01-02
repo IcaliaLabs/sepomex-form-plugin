@@ -14,13 +14,14 @@
     "Sepomex"
   ],
   "author": "Ana Paola Treviño, Rene Garcia, Erik Torres",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/IcaliaLabs/sepomex-form-plugin/issues"
   },
   "homepage": "https://github.com/IcaliaLabs/sepomex-form-plugin#readme",
   "dependencies": {
     "axios": "^0.17.1",
-    "javascript-models": "^1.0.2"
+    "javascript-models": "^1.0.2",
+    "jquery": "^3.2.1"
   }
 }
