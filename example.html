@@ -4,25 +4,27 @@
     <title>Example</title>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCcpA4WFmNo2K7GcmxVOkVjK1kv2BmOqsc"></script>
     <script src="./dist/sepomex-form-plugin.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
   </head>
   <body>
-    <div id='map' style='width:400px; height:400px;'>
-    </div>
-    <form id="CustomFormContainer"action="" method="post">
+    <div id='map' style='width:400px; height:500px;'> </div>
+    <form id="CustomFormContainer" action="" method="post">
       <p>Numero</p>
       <input type="text" name="" id="AddressNumber" value=""/>
       <p>Calle</p>
       <input type="text" name="" id="AddressStreet" value=""/>
       <p>Colonia</p>
       <input type="text" name="" id="AddressSuburb" value=""/>
+      <p>ZipCode</p>
+      <input type="text" name="" id="AddressZipCode" value=""/>
       <p>Ciudad</p>
       <input type="text" name="" id="AddressCity" value=""/>
       <p>Estado</p>
       <input type="text" name="" id="AddressState" value=""/>
       <p>Pais</p>
       <input type="text" name="" id="AddressCountry" value=""/>
-      <p>ZipCode</p>
-      <input type="text" name="" id="AddressZipCode" value=""/>
+      
     </form>
     <script type="text/javascript"> 
 $.fn.sepomexForm.defaults.formContainer = "#CustomFormContainer";
