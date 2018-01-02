@@ -8,12 +8,12 @@ var axios = require('axios')
 (function( $ ) {
   $.fn.autocompleteForm = function(options) {
 
-    $.fn.autocompleteForm.defaults = {
-      suburbContainer: "#AddressSuburb",
-      cityContainer: "#AddressCity",
-      stateContainer: "#AddressState",
-      zipCodeContainer: "#AddressZipCode"
-    };
+    $.fn.sepomexForm.defaults = {
+    suburbContainer: "#AddressSuburb",
+    cityContainer: "#AddressCity",
+    stateContainer: "#AddressState",
+    zipCodeContainer: "#AddressZipCode"
+  };
 
     var opts = $.extend( {}, $.fn.autocompleteForm.defaults, options );
 
@@ -31,8 +31,9 @@ var axios = require('axios')
       Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value, colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value, city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeCity(response);
           completeState(response);
+          $("input[type='text']").trigger("change");
         }).catch((error) => {
-          console.log("Error in autocompleting zipcode")
+          console.log("Error in autocompleting zipcode");
       });
     });
 
@@ -41,16 +42,18 @@ var axios = require('axios')
           completeZipCode(response)
           completeCity(response);
           completeState(response);
+          $("input[type='text']").trigger("change");
         }).catch((error) => {
-          console.log("Error in autocompleting suburb")
+          console.log("Error in autocompleting suburb");
       });
     });
 
     $($.fn.autocompleteForm.defaults.cityContainer).focusout(function(){
       Sepomex.where({zip_code: $($.fn.autocompleteForm.defaults.zipCodeContainer)[0].value, colony: $($.fn.autocompleteForm.defaults.suburbContainer)[0].value, city:  $($.fn.autocompleteForm.defaults.cityContainer)[0].value}).then((response) => {
           completeState(response);
+          $("input[type='text']").trigger("change");
         }).catch((error) => {
-          console.log("Error in autocompleting city")
+          console.log("Error in autocompleting city");
       });
     });
   }
@@ -96,7 +99,7 @@ var axios = require('axios')
               else if(address_components[i].types.includes('locality')) {
                 $($.fn.sepomexForm.defaults.cityContainer).val(address_components[i].long_name);
               }
-              else if(address_components[i].types.includes('administrative_area_level_2')) {
+              else if(address_components[i].types.includes('administrative_area_level_1')) {
                 $($.fn.sepomexForm.defaults.stateContainer).val(address_components[i].long_name);
               }
               else if(address_components[i].types.includes('country')) {
@@ -134,7 +137,7 @@ var axios = require('axios')
       return address;
     }
 
-    $($.fn.sepomexForm.defaults.formContainer).focusout(function(){
+    $("input[type='text']").change(function(){
       getLatitudeLongitudeAndSetInMap(function(latLng) {
         map.setCenter(latLng);
         marker.setVisible(true);
