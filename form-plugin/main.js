@@ -9,14 +9,9 @@ var axios = require('axios')
   $.fn.autocompleteForm = function(options) {
 
     $.fn.sepomexForm.defaults = {
-    formContainer: "#AddressForm",
-    mapContainer: "#MapWrapper",
-    numberContainer: "#AddressNumber",
-    streetContainer: "#AddressStreet",
     suburbContainer: "#AddressSuburb",
     cityContainer: "#AddressCity",
     stateContainer: "#AddressState",
-    countryContainer: "#AddressCountry",
     zipCodeContainer: "#AddressZipCode"
   };
 
@@ -38,11 +33,6 @@ var axios = require('axios')
           completeState(response);
           $("input[type='text']").trigger("change");
         }).catch((error) => {
-          $($.fn.sepomexForm.defaults.formContainer + ' :input').each(function() {
-            if(this != $.fn.sepomexForm.defaults.zipCodeContainer ){
-                this.val("");
-              }
-          });
           console.log("Error in autocompleting zipcode");
       });
     });
