@@ -1,5 +1,5 @@
 <img src="https://gist.githubusercontent.com/ReneSG/edd816da93cc78288962a6846587c644/raw/9ffb21419aa19eb8414c56982ff8c59eeddab60b/Sepomexlogo.jpg" width="700">
-[![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)]
+![[Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)]
 
 
 _SepomexForm with Google Maps integration facilitates the use of forms with addresses in your application._
@@ -15,7 +15,30 @@ SepomexForm has a second functionality, by using the Sepomex API, it allows fiel
 
 SepomexForm has even a third functionality! It migrates all data from [Sepomex Api](https://github.com/IcaliaLabs/sepomex) to [JSModels](https://github.com/IcaliaLabs/javascript-models)
 
-## Installation of Google Map Sepomex Form: 
+## Installation using npm:
+
+1. Install sepomex-form-plugin via npm:
+		run npm install sepomex-form-plugin
+
+2. Include Google Maps Api. You will need an API key, if you don't have one you can get it 							[here](https://developers.google.com/maps/documentation/javascript/get-api-key):
+
+	```html
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+	```
+
+3. Include plugin's code:
+
+	```html
+		<script src="./node_modules/sepomex-form-plugin/dist/sepomex-form-plugin.min.js"></script>
+	```
+
+4. Call the plugin:
+
+	```javascript
+    $.fn.sepomexForm();
+	```
+
+## Installation of Google Map Sepomex Form:
 
 1. Include jQuery:
 
@@ -41,7 +64,7 @@ SepomexForm has even a third functionality! It migrates all data from [Sepomex A
     $.fn.sepomexForm();
 	```
 
-## Installation of Autocompleting with Sepomex Api: 
+## Installation of Autocompleting with Sepomex Api:
 
 1. Include jQuery:
 
@@ -49,24 +72,13 @@ SepomexForm has even a third functionality! It migrates all data from [Sepomex A
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   ```
 
-2. Install all Node packages dependencies
-
-  ```bash
-    npm install
-  ```
-
-3. Install browserify, you can see the instructions [here](https://github.com/browserify/browserify)
-
-
-4. Include plugin's code:
+2. Include plugin's code:
 
   ```html
   <script src="dist/sepomex-form-plugin.js"></script>
   ```
 
-5. Use browserify command to bundle all Node.JS requires. Please look for more information [here](https://github.com/browserify/browserify#example)
-
-6. Call the plugin:
+3. Call the plugin:
 
   ```javascript
     $.fn.sepomexForm();
@@ -76,10 +88,8 @@ SepomexForm has even a third functionality! It migrates all data from [Sepomex A
 ## Table of Contents
 * [Configuring SepomexForm](#configuring-sepomexform)
   - [Default config](#default-config)
-  - [Generator](#custom-config)
 * [Configuring AutocompleteForm](#configuring-autocompleteform)
   - [Default config](#default-config-autocomplete)
-  - [Generator](#custom-config-autocomplete)
 * [Using JS Models]
   - [Usage](#JsModels-usage)
 * [Contributing](#contributing)
@@ -170,10 +180,10 @@ before calling the plugin.
 ```
 
 ## JSModels
- 
+
  SepomexForm migrates the data from [SepomexApi] to JsModels. Please refer to its documentation for more about it. [here](https://github.com/IcaliaLabs/javascript-models)
 
- 
+
 
 
 
