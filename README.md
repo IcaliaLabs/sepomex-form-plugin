@@ -9,7 +9,7 @@ SepomexForm helps you to easily manage your forms with address
 information.
 
 SepomexForm brings you easy implementation of form filling using Google Maps Api, by automatically filling
-fields based on a Google Maps arker, and by placing markers based on form information.
+fields based on a Google Maps marker, and by placing markers based on form information.
 
 SepomexForm has a second functionality, by using the Sepomex API, it allows fields of your form to be automatically filled when typing more specific information. See below for examples and a more thorough explanation.
 
