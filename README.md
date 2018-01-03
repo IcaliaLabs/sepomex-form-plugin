@@ -1,10 +1,5 @@
 <img src="https://gist.githubusercontent.com/ReneSG/edd816da93cc78288962a6846587c644/raw/9ffb21419aa19eb8414c56982ff8c59eeddab60b/Sepomexlogo.jpg" width="700">
-<<<<<<< HEAD
 ![[Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)]
-=======
-![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)
-
->>>>>>> e208a31... Update README.md
 
 
 _SepomexForm with Google Maps integration facilitates the use of forms with addresses in your application._
@@ -23,7 +18,9 @@ SepomexForm has even a third functionality! It migrates all data from [Sepomex A
 ## Installation using npm:
 
 1. Install sepomex-form-plugin via npm:
+	```bash
 		run npm install sepomex-form-plugin
+	```
 
 2. Include Google Maps Api. You will need an API key, if you don't have one you can get it 							[here](https://developers.google.com/maps/documentation/javascript/get-api-key):
 
