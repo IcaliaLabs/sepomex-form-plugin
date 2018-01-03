@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Example</title>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCcpA4WFmNo2K7GcmxVOkVjK1kv2BmOqsc"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script src="./dist/sepomex-form-plugin.min.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
@@ -24,10 +24,10 @@
       <input type="text" name="" id="AddressState" value=""/>
       <p>Pais</p>
       <input type="text" name="" id="AddressCountry" value=""/>
-      
+
     </form>
-    <script type="text/javascript"> 
-$.fn.sepomexForm.defaults.formContainer = "#CustomFormContainer";
+    <script type="text/javascript">
+      $.fn.sepomexForm.defaults.formContainer = "#CustomFormContainer";
       $.fn.sepomexForm.defaults.mapContainer = "#map";
       $("#form").autocompleteForm();
       $.fn.sepomexForm();

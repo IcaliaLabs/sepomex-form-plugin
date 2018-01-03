@@ -8,7 +8,7 @@ var axios = require('axios')
 (function( $ ) {
   $.fn.autocompleteForm = function(options) {
 
-    $.fn.sepomexForm.defaults = {
+    $.fn.autocompleteForm.defaults = {
     suburbContainer: "#AddressSuburb",
     cityContainer: "#AddressCity",
     stateContainer: "#AddressState",
